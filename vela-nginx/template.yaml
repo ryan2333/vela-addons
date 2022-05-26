@@ -4,5 +4,3 @@ metadata:
   namespace: vela-system
   name: vela-nginx
 spec:
-
-  

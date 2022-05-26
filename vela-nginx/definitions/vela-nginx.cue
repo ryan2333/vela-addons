@@ -1,56 +1,52 @@
 "vela-nginx": {
 	annotations: {}
 	attributes: workload: definition: {
-		apiVersion: "apps/v1"
-		kind:       "Deployment"
+		apiVersion: "<change me> apps/v1"
+		kind:       "<change me> Deployment"
 	}
+	description: "vela-nginx"
 	labels: {}
 	type: "component"
 }
+
 template: {
 	output: {
-		type: "raw"
-		properties: {
-			apiVersion: "apps/v1"
-			kind:       "Deployment"
-			metadata: {
-				name:      "nginx"
-				namespace: parameter.namespace
-			}
-			spec: {
-				replicas: parameter.replicas
-				selector: matchLabels: app: "nginx"
-				template: {
-					metadata: labels: app: "nginx"
-					spec: {
-						containers: [{
-							name:  "nginx"
-							image: parameter.image
-							ports: [{
-								containerPort: parameter.port
-							}]
-						}]
+		metadata: {
+			name: "nginx-test-ignore"
+			annotations: ignoreAnnotations: "xxx"
+			labels: app:                    "nginx-test-ignore"
+		}
+		spec: {
+			replicas: 1
+			selector: matchLabels: app: "nginx-test-ignore"
+			strategy: {}
+			template: {
+				metadata: {
+					annotations: ignoreAnnotations: "xxx"
+					labels: {
+						app:     "nginx-test-ignore"
+						restart: "2"
 					}
 				}
-			}
-		}
-	}
-	outputs: {
-		nginx: {
-			apiVersion: "v1"
-			kind:       "Service"
-			metadata: {
-				name: "vela-nginx"
-				labels: app: "nginx"
-			}
-			spec: {
-				type: parameter.serviceType
-				selector: app: "nginx"
-				ports: [{
-					port:       parameter.port
-					targetPort: parameter.port
+				spec: containers: [{
+					name:  "nginx"
+					image: "nginx:1.18"
+					resources: {
+						limits: {
+							cpu:    "200m"
+							memory: "300Mi"
+						}
+						requests: {
+							cpu:    "100m"
+							memory: "200Mi"
+						}
+					}
 				}]
 			}
 		}
+		apiVersion: "apps/v1"
+		kind:       "Deployment"
 	}
+	outputs: {}
+	parameter: {}
 }
