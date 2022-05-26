@@ -1,1 +1,1 @@
-tesst vela nginx
+test vela nginx

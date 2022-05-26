@@ -1,20 +1,21 @@
 output: {
 	type: "raw"
 	properties: {
+		apiVersion: "apps/v1"
+		kind:       "Deployment"
 		metadata: {
-			name: "nginx-test-ignore"
+			name: "nginx_test_ignore"
 			annotations: ignoreAnnotations: "xxx"
-			labels: app:                    "nginx-test-ignore"
+			labels: app:                    "nginx_test_ignore"
 		}
 		spec: {
 			replicas: 1
-			selector: matchLabels: app: "nginx-test-ignore"
-			strategy: {}
+			selector: matchLabels: app: "nginx_test_ignore"
 			template: {
 				metadata: {
 					annotations: ignoreAnnotations: "xxx"
 					labels: {
-						app:     "nginx-test-ignore"
+						app:     "nginx_test_ignore"
 						restart: "2"
 					}
 				}
@@ -34,9 +35,5 @@ output: {
 				}]
 			}
 		}
-		apiVersion: "apps/v1"
-		kind:       "Deployment"
 	}
 }
-outputs: {}
-parameter: {}
