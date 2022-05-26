@@ -1,0 +1,28 @@
+#parameter: {
+#  namespace:   *"vela-system" | string
+#                 replicas:    *1 | int
+#                 image:       string
+#                 port:        *80 | int
+#                 cpu:         *200 | int
+#                 memory:      *256 | int
+#                 serviceType: *"ClusterIP" | "NodePort" | "LoadBalancer" | "ExternalName"
+#}
+- jsonKey: namespace
+  label: Namespace
+  sort: 1
+- jsonKey: replicas
+  label: Replicas
+  sort: 2
+- jsonKey: image
+  label: Image
+  sort: 3
+  validate:
+    required: true
+- jsonKey: port
+  sort: 4
+- jsonKey: cpu
+  sort: 5
+- jsonKey: memory
+  sort: 6
+- jsonKey: serviceType
+  sort: 7

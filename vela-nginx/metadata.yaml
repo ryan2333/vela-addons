@@ -1,11 +1,11 @@
-name: "test-nginx" # 插件名称 
+name: "vela-nginx" # 插件名称
 version: 0.0.1 # 插件版本
 description: "exame addon" # 插件描述
 icon: "https://nginx.org/nginx.png" # 插件icon
 url: "https://nginx.org/en/" # 插件文档说明
 
 tags: 
-  - only-example
+  - vela-nginx
 
 deployTo:
   runtimeCluster: true # 表示插件是否安装到子集群当中，当该字段被设置为 true，应用中的资源会被下发到子集群当中。
