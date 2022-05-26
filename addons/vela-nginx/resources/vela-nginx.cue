@@ -9,7 +9,7 @@ output: {
 			labels: app:                    "nginx_test_ignore"
 		}
 		spec: {
-			replicas: 1
+			replicas: parameter.replicas
 			selector: matchLabels: app: "nginx_test_ignore"
 			template: {
 				metadata: {
@@ -21,15 +21,15 @@ output: {
 				}
 				spec: containers: [{
 					name:  "nginx"
-					image: "nginx:1.18"
+					image: parameter.image
 					resources: {
 						limits: {
-							cpu:    "200m"
-							memory: "300Mi"
+							cpu:    parameter.cpu
+							memory: parameter.memory
 						}
 						requests: {
-							cpu:    "100m"
-							memory: "200Mi"
+							cpu:    parameter.cpu
+							memory: parameter.memory
 						}
 					}
 				}]
