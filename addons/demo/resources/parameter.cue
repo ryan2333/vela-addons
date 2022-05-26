@@ -1,0 +1,3 @@
+parameter: {
+	example: *"abc" | string
+}

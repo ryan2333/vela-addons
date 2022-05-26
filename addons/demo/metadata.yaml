@@ -1,0 +1,14 @@
+name: example
+version: 1.0.0
+description: Example adddon.
+icon: xxx
+url: xxx
+
+tags:
+  - only_example
+
+deployTo:
+  runtimeCluster: false
+
+
+invisible: false
