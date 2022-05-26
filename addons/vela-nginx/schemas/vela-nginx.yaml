@@ -1,0 +1,14 @@
+- jsonKey: namespace
+  sort: 1
+- jsonKey: replicas
+  sort: 2
+- jsonKey: image
+  sort: 3
+- jsonKey: port
+  sort: 4
+-jsonKey: cpu
+  sort: 5
+- jsonKey: memory
+  sort: 6
+- jsonKey: serviceType
+  sort: 7
