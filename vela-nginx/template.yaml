@@ -1,0 +1,8 @@
+apiVersion: core.oam.ev/v1beta1
+kind: Application
+metadata: 
+  namespace: vela-system
+  name: vela-nginx
+spec:
+
+  
