@@ -1,3 +1,12 @@
+"vela-nginx": {
+	annotations: {}
+	attributes: workload: definition: {
+		apiVersion: "apps/v1"
+		kind:       "Deployment"
+	}
+	labels: {}
+	type: "component"
+}
 output: {
 	type: "raw"
 	properties: {
