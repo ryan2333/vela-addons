@@ -6,7 +6,7 @@
   sort: 3
 - jsonKey: port
   sort: 4
--jsonKey: cpu
+- jsonKey: cpu
   sort: 5
 - jsonKey: memory
   sort: 6
